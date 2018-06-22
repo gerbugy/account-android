@@ -43,14 +43,4 @@ public abstract class BaseSecureActivity extends SecureTimerActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
-//    protected void hideSoftInputFromWindow() {
-//        View view = getCurrentFocus();
-//        if (view != null) {
-//            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-//            if (imm != null) {
-//                imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
-//            }
-//        }
-//    }
 }

@@ -17,7 +17,7 @@ import com.gerbugy.account.db.AccountDao;
 import com.gerbugy.account.secure.SecureTimerActivity;
 import com.gerbugy.account.util.SQLiteItem;
 
-public class AccountViewActivity extends SecureTimerActivity implements View.OnClickListener {
+public class AccountViewActivity extends BaseSecureActivity implements View.OnClickListener {
 
     private SQLiteItem mItem;
     private AccountViewBinding mBinding;

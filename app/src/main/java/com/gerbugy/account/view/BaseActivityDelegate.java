@@ -8,7 +8,6 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 
 import com.gerbugy.account.R;
@@ -16,11 +15,11 @@ import com.gerbugy.account.util.AdUtils;
 import com.gerbugy.account.widget.FixAppBarLayoutBehavior;
 import com.google.android.gms.ads.AdView;
 
-public final class BaseActivityDelegate {
+final class BaseActivityDelegate {
 
     private final AppCompatActivity mActivity;
 
-    public BaseActivityDelegate(AppCompatActivity activity) {
+    BaseActivityDelegate(AppCompatActivity activity) {
         mActivity = activity;
     }
 
@@ -30,7 +29,6 @@ public final class BaseActivityDelegate {
             setSupportActionBar(toolbar);
         }
         ActionBar actionBar = getSupportActionBar();
-        Log.d("TEST", "action:" + actionBar);
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
@@ -52,6 +50,18 @@ public final class BaseActivityDelegate {
         }
     }
 
+    private ActionBar getSupportActionBar() {
+        return mActivity.getSupportActionBar();
+    }
+
+    private void setSupportActionBar(Toolbar toolbar) {
+        mActivity.setSupportActionBar(toolbar);
+    }
+
+    private View findViewById(int id) {
+        return mActivity.findViewById(id);
+    }
+
     public void onResume() {
         AdView adView = (AdView) findViewById(R.id.ad_view);
         if (adView != null) {
@@ -71,17 +81,5 @@ public final class BaseActivityDelegate {
         if (adView != null) {
             adView.destroy();
         }
-    }
-
-    private ActionBar getSupportActionBar() {
-        return mActivity.getSupportActionBar();
-    }
-
-    private void setSupportActionBar(Toolbar toolbar) {
-        mActivity.setSupportActionBar(toolbar);
-    }
-
-    private View findViewById(int id) {
-        return mActivity.findViewById(id);
     }
 }
