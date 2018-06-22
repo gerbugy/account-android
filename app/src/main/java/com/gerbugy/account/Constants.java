@@ -37,7 +37,7 @@ public interface Constants {
     long NO_ID = -1;
 
     /**
-     * 암호키
+     * TODO 암호키
      */
     String CIPHER_KEY = "com.gerbugy";
 }
