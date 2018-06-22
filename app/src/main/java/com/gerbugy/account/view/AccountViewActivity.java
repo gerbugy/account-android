@@ -14,9 +14,10 @@ import com.gerbugy.account.Constants;
 import com.gerbugy.account.R;
 import com.gerbugy.account.databinding.AccountViewBinding;
 import com.gerbugy.account.db.AccountDao;
+import com.gerbugy.account.secure.SecureTimerActivity;
 import com.gerbugy.account.util.SQLiteItem;
 
-public class AccountViewActivity extends BaseSecureActivity implements View.OnClickListener {
+public class AccountViewActivity extends SecureTimerActivity implements View.OnClickListener {
 
     private SQLiteItem mItem;
     private AccountViewBinding mBinding;

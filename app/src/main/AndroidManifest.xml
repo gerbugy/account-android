@@ -48,8 +48,5 @@
         <activity
             android:name=".view.DatabaseActivity"
             android:label="@string/database" />
-
-        <!-- 서비스 -->
-        <service android:name=".service.SecureService" />
     </application>
 </manifest>
