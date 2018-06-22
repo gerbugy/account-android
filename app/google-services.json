@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "17666314807",
+    "firebase_url": "https://gerbugy-account.firebaseio.com",
+    "project_id": "gerbugy-account",
+    "storage_bucket": "gerbugy-account.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:17666314807:android:8024577a0580b327",
+        "android_client_info": {
+          "package_name": "com.gerbugy.account"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "17666314807-fpll8cqkattq89llg1bvtm1qaf47n585.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "17666314807-fpll8cqkattq89llg1bvtm1qaf47n585.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCN2bM3vmIMGQvp8UstYOeGFwxSh4gKoKU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
