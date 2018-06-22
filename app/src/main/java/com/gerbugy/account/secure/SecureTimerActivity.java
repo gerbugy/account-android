@@ -1,12 +1,19 @@
 package com.gerbugy.account.secure;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Message;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.TextView;
+
+import com.gerbugy.account.R;
 
 public abstract class SecureTimerActivity extends AppCompatActivity implements SecureTimerListener {
 
@@ -14,6 +21,9 @@ public abstract class SecureTimerActivity extends AppCompatActivity implements S
     private int mSecondsInWarning = SecureTimerContext.SECONDS_DEFAULT_WARNING;
 
     private final SecureTimerHandler mHandler = new SecureTimerHandler(this);
+
+    private AlertDialog mTimerDialog;
+    private TextView mTimerText;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -63,7 +73,26 @@ public abstract class SecureTimerActivity extends AppCompatActivity implements S
 
     @Override
     public void onSecureWarning(int seconds) {
-
+        Log.d("TEST", "onSecureWarning:" + seconds);
+        if (mTimerDialog == null) {
+            mTimerDialog = new AlertDialog.Builder(this).setView(getLayoutInflater().inflate(R.layout.dialog_text, null)).setOnCancelListener(new DialogInterface.OnCancelListener() {
+                @Override
+                public void onCancel(DialogInterface dialogInterface) {
+                    sendStart();
+                }
+            }).create();
+        }
+        if (!mTimerDialog.isShowing()) {
+            mTimerDialog.show();
+            mTimerText = mTimerDialog.findViewById(R.id.message);
+            mTimerText.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    mTimerDialog.cancel();
+                }
+            });
+        }
+        mTimerText.setText(getString(R.string.app_until_exit, seconds));
     }
 
     @Override

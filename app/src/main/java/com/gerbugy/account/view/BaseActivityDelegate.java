@@ -8,6 +8,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.gerbugy.account.R;
@@ -26,9 +27,9 @@ final class BaseActivityDelegate {
     public void onPostCreate(Bundle savedInstanceState) {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         if (toolbar != null) {
-            setSupportActionBar(toolbar);
+            mActivity.setSupportActionBar(toolbar);
         }
-        ActionBar actionBar = getSupportActionBar();
+        ActionBar actionBar = mActivity.getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
@@ -50,18 +51,6 @@ final class BaseActivityDelegate {
         }
     }
 
-    private ActionBar getSupportActionBar() {
-        return mActivity.getSupportActionBar();
-    }
-
-    private void setSupportActionBar(Toolbar toolbar) {
-        mActivity.setSupportActionBar(toolbar);
-    }
-
-    private View findViewById(int id) {
-        return mActivity.findViewById(id);
-    }
-
     public void onResume() {
         AdView adView = (AdView) findViewById(R.id.ad_view);
         if (adView != null) {
@@ -81,5 +70,18 @@ final class BaseActivityDelegate {
         if (adView != null) {
             adView.destroy();
         }
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                mActivity.onBackPressed();
+                return true;
+        }
+        return false;
+    }
+
+    private View findViewById(int id) {
+        return mActivity.findViewById(id);
     }
 }
