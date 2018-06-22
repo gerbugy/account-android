@@ -6,7 +6,6 @@ import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
@@ -73,7 +72,6 @@ public abstract class SecureTimerActivity extends AppCompatActivity implements S
 
     @Override
     public void onSecureWarning(int seconds) {
-        Log.d("TEST", "onSecureWarning:" + seconds);
         if (mTimerDialog == null) {
             mTimerDialog = new AlertDialog.Builder(this).setView(getLayoutInflater().inflate(R.layout.dialog_text, null)).setOnCancelListener(new DialogInterface.OnCancelListener() {
                 @Override
