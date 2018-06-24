@@ -12,7 +12,7 @@ import com.gerbugy.account.databinding.AccountEditBinding;
 import com.gerbugy.account.db.AccountDao;
 import com.gerbugy.account.util.SQLiteItem;
 
-public class AccountEditActivity extends BaseSecureActivity implements View.OnClickListener {
+public class AccountEditActivity extends BaseActivity implements View.OnClickListener {
 
     private SQLiteItem mItem;
     private AccountEditBinding mBinding;

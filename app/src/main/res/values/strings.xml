@@ -3,7 +3,7 @@
     <!-- 어플리케이션 -->
     <string name="app_name">툭하면 계정</string>
     <string name="app_info">애플리케이션 정보</string>
-    <string name="app_until_exit">%1$d초 후 종료 예정입니다.</string>
+    <string name="app_until_exit">%1$d초 후 자동으로 종료됩니다.</string>
     <string name="open_drawer_content_desc">open_drawer_content_desc</string>
     <string name="close_drawer_content_desc">close_drawer_content_desc</string>
     <string name="banner_ad_unit_id">ca-app-pub-5295314606402898/5289390907</string>

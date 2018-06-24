@@ -9,7 +9,7 @@ import com.gerbugy.account.R;
 import com.gerbugy.account.databinding.MainBinding;
 import com.gerbugy.account.util.AppUtils;
 
-public class MainActivity extends BaseSecureActivity implements View.OnClickListener {
+public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     private MainBinding mBinding;
     private MainPagerAdapter mPagerAdapter;
